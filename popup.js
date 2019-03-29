@@ -115,6 +115,45 @@ function injectScriptForUnix(){
     });
 }
 
+function injectScriptForSE(){
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
+        //Query the active tab, which will be only one tab
+        //and inject the script in it
+        chrome.tabs.executeScript(tabs[0].id, {code: 
+           "document.getElementById('skipQuestion').click();\
+            document.getElementById('noSubKnowledge').click();\
+            document.getElementById('reason82').click();\
+            document.getElementsByClassName('btn-primary')[0].click();\
+            "});
+    });
+}
+
+function injectScriptForCN(){
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
+        //Query the active tab, which will be only one tab
+        //and inject the script in it
+        chrome.tabs.executeScript(tabs[0].id, {code: 
+           "document.getElementById('skipQuestion').click();\
+            document.getElementById('noSubKnowledge').click();\
+            document.getElementById('reason77').click();\
+            document.getElementsByClassName('btn-primary')[0].click();\
+            "});
+    });
+}
+
+function injectScriptForDS(){
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
+        //Query the active tab, which will be only one tab
+        //and inject the script in it
+        chrome.tabs.executeScript(tabs[0].id, {code: 
+           "document.getElementById('skipQuestion').click();\
+            document.getElementById('noSubKnowledge').click();\
+            document.getElementById('reason65').click();\
+            document.getElementsByClassName('btn-primary')[0].click();\
+            "});
+    });
+}
+
 function injectScriptForOther(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
         //Query the active tab, which will be only one tab
@@ -137,4 +176,7 @@ document.getElementById('microsoft-skip-button').addEventListener('click', injec
 document.getElementById('coa-skip-button').addEventListener('click', injectScriptForCOA);
 document.getElementById('os-skip-button').addEventListener('click', injectScriptForOS);
 document.getElementById('unix-skip-button').addEventListener('click', injectScriptForUnix);
+document.getElementById('se-skip-button').addEventListener('click', injectScriptForSE);
+document.getElementById('cn-skip-button').addEventListener('click', injectScriptForCN);
+document.getElementById('ds-skip-button').addEventListener('click', injectScriptForDS);
 document.getElementById('other-skip-button').addEventListener('click', injectScriptForOther);
