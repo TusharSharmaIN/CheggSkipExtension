@@ -5,13 +5,31 @@
         <title>Chegg Skipper</title>
     </head>
     <body>
-        <button class = "skip-button">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Skip
-        </button>
-        <script src="popup.js"></script>
+        <div class = "skip-buttons-container">
+            <table id = "skip-buttons-list">
+                <tr>
+                    <td><button id = "assembly-skip-button" class = "skip-buttons-left">Assembly</button></td>
+                    <td><button id = "c-skip-button" class = "skip-buttons-right">C</button></td>
+                </tr>
+                <tr>
+                    <td><button id = "cpp-skip-button" class = "skip-buttons-left">C++</button></td>
+                    <td><button id = "java-skip-button" class = "skip-buttons-right">Java</button></td>
+                </tr>
+                    <td><button id = "python-skip-button" class = "skip-buttons-left">Python</button></td>
+                    <td><button id = "microsoft-skip-button" class = "skip-buttons-right">Microsoft</button></td>
+                <tr>
+                    <td><button id = "coa-skip-button" class = "skip-buttons-left">COA</button></td>
+                    <td><button id = "os-skip-button" class = "skip-buttons-right">OS</button></td>
+                </tr>
+                <tr>
+                    <td><button id = "unix-skip-button" class = "skip-buttons-left">Unix/Linux</button></td>
+                    <td><button id = "se-skip-button" class = "skip-buttons-right">SE</button></td>
+                </tr>
+                <tr>
+                    <td><button id = "other-skip-button">Other</button></td>
+                </tr>
+                <script src="popup.js"></script>
+            </table>
+        </div>
     </body>
 </html>
