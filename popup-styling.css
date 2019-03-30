@@ -11,16 +11,24 @@ body{
     margin: 0;
 }
 
-.skip-buttons-left{
+button{
+    border: none;
     min-height: 50px;
     color: grey;
-    background: linear-gradient(to right, #000000, #333333);
-    border: none;
     font-family: 'poppins', sans-serif;
     font-size: 15px;
     text-decoration: none;
     min-width: 150px;
     border-radius: 5px;
+    outline: none;
+}
+
+button:active{
+    transform: translateY(2px);
+}
+
+.skip-buttons-left{
+    background: linear-gradient(to right, #000000, #333333);
 }
 
 .skip-buttons-left:hover{
@@ -30,15 +38,7 @@ body{
 }
 
 .skip-buttons-right{
-    min-height: 50px;
-    color: grey;
     background: linear-gradient(to left, #000000, #333333);
-    border: none;
-    font-family: 'poppins', sans-serif;
-    font-size: 15px;
-    text-decoration: none;
-    min-width: 150px;
-    border-radius: 5px;
 }
 
 .skip-buttons-right:hover{
@@ -48,15 +48,9 @@ body{
 }
 
 #other-skip-button{
-    min-height: 50px;
-    color: grey;
     background: linear-gradient(to bottom, #000000, #333333);
-    border: none;
-    font-family: 'poppins', sans-serif;
     font-size: 20px;
-    text-decoration: none;
     width: 200%;
-    border-radius: 5px;
 }
 
 #other-skip-button:hover{
