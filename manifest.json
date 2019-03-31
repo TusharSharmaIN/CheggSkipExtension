@@ -1,8 +1,8 @@
 {
     "short_name": "Skip",
     "manifest_version": 2,
-    "name": "Skip Chegg questions in one-click",
-    "description": "One-click skipping extension for Chegg QnA",
+    "name": "Chegg | Expert QnA",
+    "description": "Handy extension to skip questions on Chegg expert QnA",
     "version": "3.0",
     "author": "Shubham Singh",
 	"browser_action": {
