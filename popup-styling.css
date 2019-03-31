@@ -1,54 +1,78 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico|Poppins');
 
-body{
+html, body{
     margin: 0;
     padding: 0;
+    /*min-width: 500px;*/
+    background: #000000;
+}
+
+.menu-btn-container{
+    margin: 0;
+    padding: 0;
+    
+}
+
+.menu-btn-container-table{
+    margin: 0;
+    padding: 0;
+}
+
+.menu-btn{
     background: black;
-}
-
-#skip-buttons-list{
-    padding: 0;
-    margin: 0;
-}
-
-button{
     border: none;
-    min-height: 50px;
-    color: grey;
+    border-radius: 5px;
+    padding: 0px 7px;
+    cursor: pointer;
     font-family: 'poppins', sans-serif;
     font-size: 15px;
-    text-decoration: none;
-    min-width: 150px;
-    border-radius: 5px;
+    font-weight: 700;
     outline: none;
+    color: grey;
 }
 
-button:active{
+.menu-btn:active{
     transform: translateY(2px);
 }
 
-.skip-buttons-left{
-    background: linear-gradient(to right, #000000, #333333);
-}
-
-.skip-buttons-left:hover{
+.menu-btn:hover{
+    background: rgb(235, 113, 0);
     color: white;
-    background: linear-gradient(to left, rgb(235, 113, 0), #000000);
+}
+
+.skip-btn-container{
+    margin: 0;
+    padding: 0;
+}
+
+.skip-btn-table{
+    padding: 0;
+    margin: 0;
+    width: 500px;
+}
+
+.skip-btn{
+    width: 100%;
+    border: none;
+    color: grey;
+    font-family: 'poppins', sans-serif;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 5px;
+    outline: none;
     cursor: pointer;
+    background: rgb(33, 162, 157, .3);
 }
 
-.skip-buttons-right{
-    background: linear-gradient(to left, #000000, #333333);
+.skip-btn:active{
+    transform: translateY(2px);
 }
 
-.skip-buttons-right:hover{
+.skip-btn:hover{
     color: white;
-    background: linear-gradient(to right, rgb(235, 113, 0), #000000);
-    cursor: pointer;
+    background: rgb(33, 162, 157);
 }
 
-#other-skip-button:hover{
-    color: white;
-    background: linear-gradient(to top, rgb(235, 113, 0), #333333);
-    cursor: pointer;
+#other-skip-btn{
+    width: 285%;
 }

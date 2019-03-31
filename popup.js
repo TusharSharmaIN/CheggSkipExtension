@@ -14,83 +14,66 @@ var reason77 = "document.getElementById('reason77').click();";//Computer Network
 var reason78 = "document.getElementById('reason78').click();";//Operating systems
 var reason79 = "document.getElementById('reason79').click();";//Computer Organisation
 var reason82 = "document.getElementById('reason82').click();";//Software Engineering
+var URL1 = "https://www.chegg.com/my/expertqa";
+var URL2 = "https://www.chegg.com/homework-help/expertquestion";
+var URL3 = "https://www.chegg.com/my/questions-and-answers/answered";
 
 function injectScriptForAssembly(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        //Query the active tab, which will be only one tab
-        //and inject the script in it
         chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason75 + line3 }); 
     });
 }
 
 function injectScriptForC(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        //Query the active tab, which will be only one tab
-        //and inject the script in it
         chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason61 + line3 }); 
     });
 }
 
 function injectScriptForCpp(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        //Query the active tab, which will be only one tab
-        //and inject the script in it
         chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason62 + line3 }); 
     });
 }
 
 function injectScriptForJava(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        //Query the active tab, which will be only one tab
-        //and inject the script in it
         chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason63 + line3 }); 
     });
 }
 
 function injectScriptForPython(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        //Query the active tab, which will be only one tab
-        //and inject the script in it
         chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason64 + line3 }); 
     });
 }
 
 function injectScriptForMicrosoft(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        //Query the active tab, which will be only one tab
-        //and inject the script in it
         chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason66 + line3 }); 
     });
 }
 
 function injectScriptForCOA(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        //Query the active tab, which will be only one tab
-        //and inject the script in it
         chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason79 + line3 }); 
     });
 }
 
 function injectScriptForOS(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        //Query the active tab, which will be only one tab
-        //and inject the script in it
         chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason78 + line3 }); 
     });
 }
 
 function injectScriptForUnix(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        //Query the active tab, which will be only one tab
-        //and inject the script in it
         chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason76 + line3 }); 
     });
 }
 
 function injectScriptForSE(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        //Query the active tab, which will be only one tab
-        //and inject the script in it
         chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason82 + line3 }); 
     });
 }
@@ -105,70 +88,61 @@ function injectScriptForCN(){
 
 function injectScriptForDS(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        //Query the active tab, which will be only one tab
-        //and inject the script in it
         chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason65 + line3 }); 
     });
 }
 
 function injectScriptForOther(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        //Query the active tab, which will be only one tab
-        //and inject the script in it
         chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason60 + line3 }); 
     });
 }
 
-function injectScriptForRefresh(){
+function injectScriptForStartAnswering(){
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-		//Query the active tab, which will be only one tab
-        //and inject the script in it	
 		chrome.tabs.update(tabs[0].id, {url: URL2});
     });
 }
 
-var URL1 = "https://www.chegg.com/*";
-var URL2 = "https://www.chegg.com/homework-help/expertquestion";
-
-function openChegg(){
-    //Query for tabs with url: 'https://www.chegg.com/homework-help/expertquestion'
-    chrome.tabs.query({url: URL2, currentWindow: true}, function(tabs){
-        //If a tab with url: 'https://www.chegg.com/homework-help/expertquestion' is not found
-        if(tabs.length == 0){
-            //Query for tab(s) with url matching with www.chegg.com
-            chrome.tabs.query({url: URL1}, function(tabs){
-                //If a tab with url: https://www.chegg.com/*' is found then update first tab in array of tabs 
-                //with url: 'https://www.chegg.com/homework-help/expertquestion'
-                //and remove all rest of the tabs
-                if(tabs.length > 0){
-                    chrome.tabs.update(tabs[0].id, {url: URL2, active: true});
-                    for(var i = 1; i < tabs.length; i++)
-                        chrome.tabs.remove(tabs[i].id);//Remove all redundant tabs
-                }
-                //If no tab with url: 'https://www.chegg.com/*' is open then create a new tab 
-                //with url: 'https://www.chegg.com/homework-help/expertquestion'
-                else{
-                    chrome.tabs.create({url: URL2});
-                }
-            });
-        }
+function injectScriptForDashboard(){
+	chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
+		chrome.tabs.update(tabs[0].id, {url: URL1});
     });
 }
 
-//Open chegg answering page when extension icon is clicked
-openChegg();
+function injectScriptForMyAnswers(){
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
+		chrome.tabs.update(tabs[0].id, {url: URL3});
+    });
+}
 
-document.getElementById('assembly-skip-button').addEventListener('click', injectScriptForAssembly);
-document.getElementById('c-skip-button').addEventListener('click', injectScriptForC);
-document.getElementById('cpp-skip-button').addEventListener('click', injectScriptForCpp);
-document.getElementById('java-skip-button').addEventListener('click', injectScriptForJava);
-document.getElementById('python-skip-button').addEventListener('click', injectScriptForPython);
-document.getElementById('microsoft-skip-button').addEventListener('click', injectScriptForMicrosoft);
-document.getElementById('coa-skip-button').addEventListener('click', injectScriptForCOA);
-document.getElementById('os-skip-button').addEventListener('click', injectScriptForOS);
-document.getElementById('unix-skip-button').addEventListener('click', injectScriptForUnix);
-document.getElementById('se-skip-button').addEventListener('click', injectScriptForSE);
-document.getElementById('cn-skip-button').addEventListener('click', injectScriptForCN);
-document.getElementById('ds-skip-button').addEventListener('click', injectScriptForDS);
-document.getElementById('other-skip-button').addEventListener('click', injectScriptForOther);
-document.getElementById('refresh-button').addEventListener('click', injectScriptForRefresh);
+function injectScriptForReload(){
+	chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
+		chrome.tabs.update(tabs[0].id, {url: URL2});
+    });
+}
+
+function injectScriptForExit(){
+	chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
+		chrome.tabs.executeScript(tabs[0].id, {code : "document.getElementById('skipQuestion-Leave').click();"});
+    });
+}
+
+document.getElementById('assembly-skip-btn').addEventListener('click', injectScriptForAssembly);
+document.getElementById('c-skip-btn').addEventListener('click', injectScriptForC);
+document.getElementById('cpp-skip-btn').addEventListener('click', injectScriptForCpp);
+document.getElementById('java-skip-btn').addEventListener('click', injectScriptForJava);
+document.getElementById('python-skip-btn').addEventListener('click', injectScriptForPython);
+document.getElementById('microsoft-skip-btn').addEventListener('click', injectScriptForMicrosoft);
+document.getElementById('coa-skip-btn').addEventListener('click', injectScriptForCOA);
+document.getElementById('os-skip-btn').addEventListener('click', injectScriptForOS);
+document.getElementById('unix-skip-btn').addEventListener('click', injectScriptForUnix);
+document.getElementById('se-skip-btn').addEventListener('click', injectScriptForSE);
+document.getElementById('cn-skip-btn').addEventListener('click', injectScriptForCN);
+document.getElementById('ds-skip-btn').addEventListener('click', injectScriptForDS);
+document.getElementById('other-skip-btn').addEventListener('click', injectScriptForOther);
+document.getElementById('start-answering-btn').addEventListener('click', injectScriptForStartAnswering);
+document.getElementById('dashboard-btn').addEventListener('click', injectScriptForDashboard);
+document.getElementById('my-answers-btn').addEventListener('click', injectScriptForMyAnswers);
+document.getElementById('reload-btn').addEventListener('click', injectScriptForReload);
+document.getElementById('exit-btn').addEventListener('click', injectScriptForExit);

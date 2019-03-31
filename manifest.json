@@ -10,5 +10,5 @@
         "default_title": "Skip question",
         "default_popup": "popup.html"
     },
-    "permissions": ["tabs", "activeTab"]
+    "permissions": ["activeTab"]
 }
