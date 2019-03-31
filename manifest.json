@@ -3,7 +3,7 @@
     "manifest_version": 2,
     "name": "Skip Chegg questions in one-click",
     "description": "One-click skipping extension for Chegg QnA",
-    "version": "2.3",
+    "version": "3.0",
     "author": "Shubham Singh",
 	"browser_action": {
         "default_icon": "images/chegg-logo.png",
