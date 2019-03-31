@@ -167,6 +167,17 @@ function injectScriptForOther(){
     });
 }
 
+function injectScriptForRefresh(){
+	
+	var URL = "https://www.chegg.com/homework-help/expertquestion";
+
+	chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
+		//Query the active tab, which will be only one tab
+        //and inject the script in it	
+		chrome.tabs.update(tabs[0].id, {url: URL});
+    });
+}
+	
 document.getElementById('assembly-skip-button').addEventListener('click', injectScriptForAssembly);
 document.getElementById('c-skip-button').addEventListener('click', injectScriptForC);
 document.getElementById('cpp-skip-button').addEventListener('click', injectScriptForCpp);
@@ -180,3 +191,4 @@ document.getElementById('se-skip-button').addEventListener('click', injectScript
 document.getElementById('cn-skip-button').addEventListener('click', injectScriptForCN);
 document.getElementById('ds-skip-button').addEventListener('click', injectScriptForDS);
 document.getElementById('other-skip-button').addEventListener('click', injectScriptForOther);
+document.getElementById('refresh-button').addEventListener('click', injectScriptForRefresh);

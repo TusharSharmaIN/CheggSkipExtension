@@ -47,12 +47,6 @@ button:active{
     cursor: pointer;
 }
 
-#other-skip-button{
-    background: linear-gradient(to bottom, #000000, #333333);
-    font-size: 20px;
-    width: 200%;
-}
-
 #other-skip-button:hover{
     color: white;
     background: linear-gradient(to top, rgb(235, 113, 0), #333333);
