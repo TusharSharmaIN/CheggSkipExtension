@@ -1,39 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+    <meta charset="UTF-8">
     <head>
         <link rel = "stylesheet" href = "popup-styling.css">
     </head>
     <body>
-        <div class = "skip-buttons-container">
-            <table id = "skip-buttons-list">
-                <tr>
-                    <td><button id = "other-skip-button"><b>OTHER</b></button></td>
-                </tr>
-                <tr>
-                    <td><button id = "assembly-skip-button" class = "skip-buttons-left">Assembly Language</button></td>
-                    <td><button id = "cn-skip-button" class = "skip-buttons-right">Computer Networks</button></td>
-                </tr>
-                <tr>
-                    <td><button id = "c-skip-button" class = "skip-buttons-left">C Programming</button></td>
-                    <td><button id = "coa-skip-button" class = "skip-buttons-right">Computer Organisation</button></td>
-                </tr>
-                    <td><button id = "cpp-skip-button" class = "skip-buttons-left">C++ Programming</button></td>
-                    <td><button id = "ds-skip-button" class = "skip-buttons-right">Data Structures</button></td>
-                <tr>
-                    <td><button id = "java-skip-button" class = "skip-buttons-left">Java Programming</button></td>
-                    <td><button id = "microsoft-skip-button" class = "skip-buttons-right">Microsoft Technologies</button></td>                    
-                </tr>
-                <tr>
-                    <td><button id = "python-skip-button" class = "skip-buttons-left">Python Programming</button></td>
-                    <td><button id = "os-skip-button" class = "skip-buttons-right">Operating System</button></td>
-
-                </tr>
-                <tr>
-                    <td><button id = "unix-skip-button" class = "skip-buttons-left">Unix/Linux</button></td>
-                    <td><button id = "se-skip-button" class = "skip-buttons-right">Software Engineering</button></td>
-                </tr>
-                <script src="popup.js"></script>
+        <div class = "menu-btn-container">
+            <table class = "menu-btn-container-table">
+            <tr>
+                <td><button id = "start-answering-btn" class = "menu-btn">START ANSWERING</button></td>
+                <td><button id = "dashboard-btn" class = "menu-btn">DASHBOARD</button></td>
+                <td><button id = "my-answers-btn" class = "menu-btn">MY ANSWERS</button></td>
+                <td><button id = "reload-btn" class = "menu-btn">RELOAD</button></td>
+                <td><button id = "exit-btn" class = "menu-btn">EXIT</button></td>
+            </tr>
             </table>
         </div>
+        <div class = "skip-btn-container">
+            <table class = "skip-btn-table">
+                <tr>
+                    <td><button id = "other-skip-btn" class = "skip-btn">Other Computer Science</button></td>
+                </tr>
+                <tr>
+                    <td><button id = "c-skip-btn" class = "skip-btn">C Programming</button></td>
+                    <td><button id = "assembly-skip-btn" class = "skip-btn">Assembly Language</button></td>
+                    <td><button id = "cn-skip-btn" class = "skip-btn">Computer Networks</button></td>
+                </tr>
+                <tr>
+                    <td><button id = "cpp-skip-btn" class = "skip-btn">C++ Programming</button></td>
+                    <td><button id = "ds-skip-btn" class = "skip-btn">Data Structures</button></td>
+                    <td><button id = "coa-skip-btn" class = "skip-btn">Computer Organisation</button></td>
+                </tr>
+                <tr>
+                    <td><button id = "java-skip-btn" class = "skip-btn">Java Programming</button></td>
+                    <td><button id = "os-skip-btn" class = "skip-btn">Operating System</button></td>
+                    <td><button id = "microsoft-skip-btn" class = "skip-btn">Microsoft Technologies</button></td>                    
+                </tr>
+                <tr>
+                    <td><button id = "python-skip-btn" class = "skip-btn">Python Programming</button></td>
+                    <td><button id = "unix-skip-btn" class = "skip-btn">Unix/Linux</button></td>
+                    <td><button id = "se-skip-btn" class = "skip-btn">Software Engineering</button></td>
+                </tr>
+            </table>
+        </div>
+        <script src="popup.js"></script>
     </body>
 </html>
