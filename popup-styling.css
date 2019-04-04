@@ -3,12 +3,7 @@
 html, body{
     margin: 0;
     padding: 0;
-    /*min-width: 500px;*/
     background: #000000;
-}
-
-table{
-	table-layout: fixed;
 }
 
 .menu-btn-container{
@@ -19,7 +14,7 @@ table{
 .menu-btn-container-table{
 	margin: 0;
     padding: 0;
-	width: 400px;
+	width: 100%;
 }
 
 .menu-btn{
@@ -27,13 +22,12 @@ table{
     border: none;
 	width: 100%;
     border-radius: 5px;
-    padding: 0px 7px;
     cursor: pointer;
     font-family: 'poppins', sans-serif;
     font-size: 15px;
     font-weight: 700;
     outline: none;
-    color: grey;
+    color: darkgrey;
 }
 
 .menu-btn:active{
@@ -53,16 +47,14 @@ table{
 .skip-btn-table{
     padding: 0;
     margin: 0;
-    width: 400px;
 }
 
 .skip-btn{
-    width: 100%;
+    width: 90px;
     border: none;
     color: grey;
     font-family: 'poppins', sans-serif;
     font-size: 13px;
-    text-decoration: none;
     border-radius: 5px;
     outline: none;
     cursor: pointer;
@@ -79,8 +71,10 @@ table{
 }
 
 #other-skip-btn{
-    width: 395px;
-	  font-size: 16px;
+    position: relative;
+    left: 3px;
+    width: calc(100% - 6px);
+    font-size: 15px;
 }
 
 #other-skip-btn:hover{
