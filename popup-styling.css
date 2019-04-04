@@ -18,14 +18,14 @@ table{
 
 .menu-btn-container-table{
 	margin: 0;
-    padding: 0;
+  padding: 0;
 	width: 400px;
 }
 
 .menu-btn{
     background: black;
     border: none;
-	width: 100%;
+	  width: 100%;
     border-radius: 5px;
     padding: 0px 7px;
     cursor: pointer;
@@ -53,6 +53,7 @@ table{
 .skip-btn-table{
     padding: 0;
     margin: 0;
+    margin-right: auto;
     width: 400px;
 }
 
