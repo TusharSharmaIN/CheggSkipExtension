@@ -20,61 +20,61 @@ var URL3 = "https://www.chegg.com/my/questions-and-answers/answered";
 
 function injectScriptForAssembly(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason75 + line3 }); 
+        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason75 + line3 });
     });
 }
 
 function injectScriptForC(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason61 + line3 }); 
+        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason61 + line3 });
     });
 }
 
 function injectScriptForCpp(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason62 + line3 }); 
+        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason62 + line3 });
     });
 }
 
 function injectScriptForJava(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason63 + line3 }); 
+        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason63 + line3 });
     });
 }
 
 function injectScriptForPython(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason64 + line3 }); 
+        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason64 + line3 });
     });
 }
 
 function injectScriptForMicrosoft(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason66 + line3 }); 
+        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason66 + line3 });
     });
 }
 
 function injectScriptForCOA(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason79 + line3 }); 
+        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason79 + line3 });
     });
 }
 
 function injectScriptForOS(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason78 + line3 }); 
+        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason78 + line3 });
     });
 }
 
 function injectScriptForUnix(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason76 + line3 }); 
+        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason76 + line3 });
     });
 }
 
 function injectScriptForSE(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason82 + line3 }); 
+        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason82 + line3 });
     });
 }
 
@@ -82,19 +82,19 @@ function injectScriptForCN(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
         //Query the active tab, which will be only one tab
         //and inject the script in it
-        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason77 + line3 }); 
+        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason77 + line3 });
     });
 }
 
 function injectScriptForDS(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason65 + line3 }); 
+        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason65 + line3 });
     });
 }
 
 function injectScriptForOther(){
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason60 + line3 }); 
+        chrome.tabs.executeScript(tabs[0].id, {code: line1 + line2 + reason60 + line3 });
     });
 }
 
@@ -107,18 +107,6 @@ function injectScriptForStartAnswering(){
 function injectScriptForDashboard(){
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
 		chrome.tabs.update(tabs[0].id, {url: URL1});
-    });
-}
-
-function injectScriptForMyAnswers(){
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-		chrome.tabs.update(tabs[0].id, {url: URL3});
-    });
-}
-
-function injectScriptForReload(){
-	chrome.tabs.query({active: true, currentWindow: true}, function(tabs, id) {
-		chrome.tabs.update(tabs[0].id, {url: URL2});
     });
 }
 
@@ -143,6 +131,4 @@ document.getElementById('ds-skip-btn').addEventListener('click', injectScriptFor
 document.getElementById('other-skip-btn').addEventListener('click', injectScriptForOther);
 document.getElementById('start-answering-btn').addEventListener('click', injectScriptForStartAnswering);
 document.getElementById('dashboard-btn').addEventListener('click', injectScriptForDashboard);
-document.getElementById('my-answers-btn').addEventListener('click', injectScriptForMyAnswers);
-document.getElementById('reload-btn').addEventListener('click', injectScriptForReload);
 document.getElementById('exit-btn').addEventListener('click', injectScriptForExit);
