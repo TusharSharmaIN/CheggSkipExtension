@@ -1,0 +1,1 @@
+window.location = "https://www.chegg.com/homework-help/expertquestion";
