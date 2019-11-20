@@ -42,15 +42,21 @@ document.getElementById('ext-skip-btn').addEventListener('click', function (){
 });
 
 document.getElementById('ext-answer-btn').addEventListener('click', function (){
+    document.getElementById('ques-ans-btn').click();
     document.getElementById('ext-answer-btn').setAttribute('disabled', true);
     document.getElementById('ext-answer-btn').style.display = "none";
-    document.getElementById('ques-ans-btn').click();
     document.getElementById('ext-submit-btn').style.display = "block";
 });
 
 document.getElementById('ext-submit-btn').addEventListener('click', () => {
     document.getElementById('submit-ans-btn').click();
     document.querySelectorAll(".primary.btn-lg.btn-primary")[1].click();
+});
+
+document.getElementById('ques-ans-btn').addEventListener('click', function (){
+    document.getElementById('ext-answer-btn').setAttribute('disabled', true);
+    document.getElementById('ext-answer-btn').style.display = "none";
+    document.getElementById('ext-submit-btn').style.display = "block";
 });
 
 document.getElementById('ext-skip-btn').focus();
