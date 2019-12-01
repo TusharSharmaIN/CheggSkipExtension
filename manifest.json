@@ -31,5 +31,8 @@
             },
             "description": "Opens popup.html"
         }
-    }
+    },
+    "web_accessible_resources": [
+        "countdown.mp3"
+    ]
 }
