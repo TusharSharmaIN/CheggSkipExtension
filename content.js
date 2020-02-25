@@ -121,7 +121,8 @@ if (JSON.parse(window.localStorage.jStorage).questionSkipSource == "a") {
 
 // Button click events
 document.getElementById("ext-exit-btn").addEventListener("click", function() {
-	document.getElementById("skipQuestion-Leave").click();
+	// document.getElementById("skipQuestion-Leave").click();
+	window.location.href = "https://www.chegg.com/my/expertqa";
 });
 
 // Add event listener to all skip buttons
@@ -129,7 +130,6 @@ let reasons = document.getElementsByClassName("skip-btn");
 Array.from(reasons).forEach(reason => {
 	reason.addEventListener("click", function(e) {
 		let rid = event.target.id.substr(5);
-		console.log(rid);
 		document.getElementById("skipQuestion").click();
 		document.getElementById("noSubKnowledge").click();
 		document.getElementById(rid).click();
