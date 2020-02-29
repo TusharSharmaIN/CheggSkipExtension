@@ -139,6 +139,15 @@ Array.from(reasons).forEach(reason => {
 
 document.getElementById("ext-answer-btn").addEventListener("click", function() {
 	document.getElementById("ques-ans-btn").click();
+});
+
+document.getElementById("ext-submit-btn").addEventListener("click", () => {
+	document.getElementById("submit-ans-btn").click();
+	document.querySelectorAll(".primary.btn-lg.btn-primary")[1].click();
+});
+
+document.getElementById("ques-ans-btn").addEventListener("click", function() {
+	clearInterval(id);
 	let btns = Array.from(document.getElementsByClassName("skip-btn"));
 	btns.forEach(element => {
 		element.style.display = "none";
@@ -150,15 +159,6 @@ document.getElementById("ext-answer-btn").addEventListener("click", function() {
 			element.style.display = "inline-block";
 		});
 	});
-});
-
-document.getElementById("ext-submit-btn").addEventListener("click", () => {
-	document.getElementById("submit-ans-btn").click();
-	document.querySelectorAll(".primary.btn-lg.btn-primary")[1].click();
-});
-
-document.getElementById("ques-ans-btn").addEventListener("click", function() {
-	clearInterval(id);
 	document.getElementById("ext-answer-btn").setAttribute("disabled", true);
 	document.getElementById("ext-answer-btn").style.display = "none";
 	document.getElementById("ext-submit-btn").style.display = "inline-block";
