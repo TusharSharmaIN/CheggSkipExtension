@@ -1,13 +1,7 @@
 var countdown = new Audio(chrome.runtime.getURL("countdown.mp3"));
 
-// var fontScript = document.createElement("script");
-// fontScript.src = "https://kit.fontawesome.com/6c05aa3d79.js";
-// fontScript.crossOrigin = "anonymous";
-// document.getElementsByTagName("head")[0].appendChild(fontScript);
-
 // Add styling sheet for extension-box
 var css = document.createElement("style");
-css.type = 'text/css';
 const style = " #ext-exit-btn:hover, #ext-skip-btn:hover{\
                     background: #E71C23;\
                     color: white;\

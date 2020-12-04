@@ -1,13 +1,13 @@
 {
-    "short_name": "Skip with ease",
+    "short_name": "SkipExt",
     "manifest_version": 2,
     "name": "Expert QnA | Chegg",
     "description": "Handy extension to skip questions on Chegg expert QnA like a boss",
-    "version": "4.0",
+    "version": "5.0",
     "author": "Shubham Singh",
     "browser_action": {
         "default_icon": "images/chegg-logo.png",
-        "default_title": "Skip questions like a boss",
+        "default_title": "Skip questions in one click",
         "default_popup": "popup.html"
     },
     "permissions": [
