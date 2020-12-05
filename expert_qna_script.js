@@ -9,7 +9,11 @@ script.onload = function () {
 document.addEventListener("qidRead", e => {
 	const qid = e.detail;
 	if (!qid) return;
-	getTranscript(qid);
+	document
+		.getElementById("ext-search-btn")
+		.addEventListener("click", function () {
+			getTranscript(qid);
+		});
 });
 
 const initializeCountdown = () => {
