@@ -1,40 +1,50 @@
 {
-    "short_name": "SkipExt",
-    "manifest_version": 2,
-    "name": "Expert QnA | Chegg",
-    "description": "Handy extension to skip questions on Chegg expert QnA like a boss",
-    "version": "5.0",
-    "author": "Shubham Singh",
-    "browser_action": {
-        "default_icon": "images/chegg-logo.png",
-        "default_title": "Skip questions in one click",
-        "default_popup": "popup.html"
-    },
-    "permissions": [
-        "activeTab"
-    ],
-    "content_scripts": [
-        {
-            "matches": ["https://www.chegg.com/homework-help/expertquestion"],
-            "js": ["content.js"],
-            "run_at": "document_start"
-        },
-        {
-            "matches": ["https://www.chegg.com/recaptcha*"],
-            "js": ["skipRecaptcha.js"]
-        }
-    ],
-    "commands": {
-        "_execute_browser_action": {
-            "suggested_key": {
-                "default": "Ctrl+Shift+Z",
-                "mac": "MacCtrl+Shift+Z"
-            },
-            "description": "Opens popup.html"
-        }
-    },
-    "web_accessible_resources": [
-        "countdown.mp3",
-        "inject.js"
-    ]
+	"short_name": "SkipExt",
+	"manifest_version": 2,
+	"name": "Expert QnA | Chegg",
+	"description": "Handy extension to skip questions on Chegg expert QnA like a boss",
+	"version": "5.0",
+	"author": "Shubham Singh",
+	"background": {
+		"persistent": false,
+		"scripts": ["background.js"]
+	},
+	"browser_action": {
+		"default_icon": "images/chegg-logo.png",
+		"default_title": "Skip questions in one click",
+		"default_popup": "popup.html"
+	},
+	"permissions": [
+		"activeTab",
+		"tabs",
+		"https://www.chegg.com/homework-help/expertquestion"
+	],
+	"content_scripts": [
+		{
+			"matches": ["https://www.chegg.com/homework-help/expertquestion"],
+			"js": ["expert_qna_script.js"],
+			"run_at": "document_start"
+		},
+		{
+			"matches": ["https://www.chegg.com/recaptcha*"],
+			"js": ["skip_recaptcha.js"]
+		},
+		{
+			"matches": [
+				"https://www.chegg.com/homework-help/questions-and-answers/*"
+			],
+			"js": ["transcript_script.js"],
+			"run_at": "document_start"
+		}
+	],
+	"commands": {
+		"_execute_browser_action": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+Z",
+				"mac": "MacCtrl+Shift+Z"
+			},
+			"description": "Opens popup.html"
+		}
+	},
+	"web_accessible_resources": ["countdown.mp3", "inject.js"]
 }
