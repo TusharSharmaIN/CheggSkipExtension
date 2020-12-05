@@ -1,3 +1,16 @@
+// Inject script to intercept console logs
+var script = document.createElement('script');
+script.src = chrome.runtime.getURL('inject.js');
+script.onload = function () {
+    this.remove();
+};
+(document.head || document.documentElement).appendChild(script);
+
+document.addEventListener('qidRead', (e) => {
+    const qid = e.detail;
+    if (!qid) return;
+});
+
 var countdown = new Audio(chrome.runtime.getURL("countdown.mp3"));
 
 // Add styling sheet for extension-box
@@ -39,14 +52,14 @@ node.innerHTML = "  <button id = \"ext-exit-btn\" class = \"ext-btn\">EXIT</butt
 document.getElementsByTagName("body")[0].appendChild(node);
 
 // Get time left and log
-var id = setInterval(function(){
+var id = setInterval(function () {
     var data = JSON.parse(window.localStorage.jStorage);
-    if(data.minutes == 0 && (data.seconds == "10" || data.seconds == "11")){
+    if (data.minutes == 0 && (data.seconds == "10" || data.seconds == "11")) {
         countdown.play();
     }
 }, 1000);
 
-if(JSON.parse(window.localStorage.jStorage).questionSkipSource == "a"){
+if (JSON.parse(window.localStorage.jStorage).questionSkipSource == "a") {
     console.log("Answer button clicked");
     clearInterval(id);
     document.getElementById('ext-answer-btn').setAttribute('disabled', true);
@@ -55,17 +68,17 @@ if(JSON.parse(window.localStorage.jStorage).questionSkipSource == "a"){
 }
 
 // Button click events
-document.getElementById('ext-exit-btn').addEventListener('click', function (){
+document.getElementById('ext-exit-btn').addEventListener('click', function () {
     document.getElementById('skipQuestion-Leave').click();
 });
 
-document.getElementById('ext-skip-btn').addEventListener('click', function (){
+document.getElementById('ext-skip-btn').addEventListener('click', function () {
     document.getElementById('skipQuestion').click();
     document.getElementById('noSubKnowledge').click();
     document.getElementsByClassName('btn-primary')[0].click();
 });
 
-document.getElementById('ext-answer-btn').addEventListener('click', function (){
+document.getElementById('ext-answer-btn').addEventListener('click', function () {
     document.getElementById('ques-ans-btn').click();
     document.getElementsByClassName('lock-overlay')[0].style.display = "block";
 });
@@ -75,7 +88,7 @@ document.getElementById('ext-submit-btn').addEventListener('click', () => {
     document.querySelectorAll(".primary.btn-lg.btn-primary")[1].click();
 });
 
-document.getElementById('ques-ans-btn').addEventListener('click', function (){
+document.getElementById('ques-ans-btn').addEventListener('click', function () {
     console.log("Answer button clicked");
     clearInterval(id);
     document.getElementById('ext-answer-btn').setAttribute('disabled', true);

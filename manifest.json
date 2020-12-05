@@ -16,7 +16,8 @@
     "content_scripts": [
         {
             "matches": ["https://www.chegg.com/homework-help/expertquestion"],
-            "js": ["content.js"]
+            "js": ["content.js"],
+            "run_at": "document_start"
         },
         {
             "matches": ["https://www.chegg.com/recaptcha*"],
@@ -33,6 +34,7 @@
         }
     },
     "web_accessible_resources": [
-        "countdown.mp3"
+        "countdown.mp3",
+        "inject.js"
     ]
 }
