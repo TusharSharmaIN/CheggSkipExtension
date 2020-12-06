@@ -1,6 +1,6 @@
 {
 	"short_name": "CEExt",
-	"manifest_version": 3,
+	"manifest_version": 2,
 	"name": "Chegg Expert Extension",
 	"description": "Handy extension for experts to skip and search questions on Chegg.com",
 	"version": "5.0",
