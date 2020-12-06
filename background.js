@@ -1,6 +1,5 @@
-const CHEGG_QUESTION_BASE_URL =
+const CHEGG_TRANSCRIPT_PAGE_BASE_URL =
 	"https://www.chegg.com/homework-help/questions-and-answers/q";
-const CHEGG_RESULTS_PAGE_BASE_URL = "https://www.chegg.com/search";
 
 const createTab = (url, index = null) => {
 	return new Promise((resolve, reject) => {
@@ -10,7 +9,10 @@ const createTab = (url, index = null) => {
 
 const getTab = url => {
 	return new Promise((resolve, reject) => {
-		chrome.tabs.query({ url }, resolve);
+		chrome.tabs.query({ url }, tabs => {
+			if (tabs.length === 0) resolve(null);
+			resolve(tabs);
+		});
 	});
 };
 
@@ -32,7 +34,7 @@ const sendMessageToTab = async (request, tabId) => {
 };
 
 const getTranscript = async qid => {
-	const transcriptTab = await createTab(CHEGG_QUESTION_BASE_URL + qid);
+	const transcriptTab = await createTab(CHEGG_TRANSCRIPT_PAGE_BASE_URL + qid);
 	try {
 		const transcript = await sendMessageToTab(
 			{ command: "get-transcript" },
@@ -42,12 +44,22 @@ const getTranscript = async qid => {
 	} catch (err) {
 		return null;
 	}
-	// const tab = await getTab(CHEGG_RESULTS_PAGE_BASE_URL + "*");
 };
 
 chrome.runtime.onMessage.addListener((request, sender, response) => {
 	if (request.command == "get-transcript") {
 		getTranscript(request.qid).then(response);
+	} else if (request.command == "get-tab") {
+		getTab(request.url).then(response);
+	} else if (request.command == "remove-tab") {
+		chrome.tabs.remove(request.tabId);
+		response();
+	} else if (request.command == "search-question") {
+		// Switch focus to results tab
+		chrome.tabs.update(request.tabId, { active: true });
+		chrome.tabs.sendMessage(request.tabId, request, t => {
+			response();
+		});
 	}
 	return true; // To send response asynchronously
 });

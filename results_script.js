@@ -1,25 +1,8 @@
-const getTranscript = () => {
-	try {
-		const transcript = document.getElementsByClassName(
-			"transcribed-image-text-show"
-		)[0].innerText;
-		return transcript;
-	} catch (err) {}
-	try {
-		const transcript = document.getElementsByClassName(
-			"ugc-base question-body-text"
-		)[0].innerText;
-		return transcript;
-	} catch (err) {
-		return null;
-	}
-};
-
 const searchQuestion = transcript => {
 	try {
 		const searchBar = document.getElementById("chegg-searchbox");
 		const searchBtn = document.querySelector(
-			"#chegg-searchbox_combobox > button"
+			"#chegg-searchbox_combobox > button:nth-of-type(2)"
 		);
 		// Bubble up input event for React app
 		Object.getOwnPropertyDescriptor(
@@ -38,10 +21,7 @@ const searchQuestion = transcript => {
 };
 
 chrome.runtime.onMessage.addListener((request, sender, response) => {
-	if (request.command == "get-transcript") {
-		const transcript = getTranscript();
-		response(transcript);
-	} else if (request.command == "search-question") {
+	if (request.command == "search-question") {
 		searchQuestion(request.transcript);
 		response();
 	}

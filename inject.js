@@ -49,19 +49,16 @@ const initialize = () => {
                     #ext-answer-btn:hover, #ext-submit-btn:hover{
                         background: #019031;
                         color: white;
-                    }
+					}
+					#ext-search-btn:hover{
+						background: #EB7100;
+                        color: white;
+					}
                     .ext-btn{
                         margin: 10px 0;
                         padding: 0 20px;
                         border-radius: 5px;
                         outline: none;
-                    }
-                    .lock-overlay{
-                        display: none;
-                        width: 100%;
-                        height: 100%;
-                        background: red;
-                        color: white;
                     }
                 `;
 	css.appendChild(document.createTextNode(style));
@@ -76,6 +73,7 @@ const initialize = () => {
 	);
 	node.innerHTML = `  <button id = "ext-exit-btn" class = "ext-btn">EXIT</button>
                         <button id = "ext-skip-btn" class = "ext-btn">SKIP TO NEXT QUESTION</button>
+                        <button id = "ext-search-btn" class = "ext-btn">SEARCH QUESTION</button>
                         <button id = "ext-answer-btn" class = "ext-btn">ANSWER</button>
                         <button id = "ext-submit-btn" class = "ext-btn" style = "display: none">SUBMIT ANSWER</button>
                     `;
@@ -107,8 +105,6 @@ const initialize = () => {
 		.getElementById("ext-answer-btn")
 		.addEventListener("click", function () {
 			document.getElementById("ques-ans-btn").click();
-			document.getElementsByClassName("lock-overlay")[0].style.display =
-				"block";
 		});
 
 	document.getElementById("ext-submit-btn").addEventListener("click", () => {
