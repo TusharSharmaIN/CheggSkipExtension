@@ -1,8 +1,8 @@
 {
-	"short_name": "SkipExt",
-	"manifest_version": 2,
-	"name": "Expert QnA | Chegg",
-	"description": "Handy extension to skip questions on Chegg expert QnA like a boss",
+	"short_name": "CEExt",
+	"manifest_version": 3,
+	"name": "Chegg Expert Extension",
+	"description": "Handy extension for experts to skip and search questions on Chegg.com",
 	"version": "5.0",
 	"author": "Shubham Singh",
 	"background": {
@@ -11,7 +11,7 @@
 	},
 	"browser_action": {
 		"default_icon": "images/chegg-logo.png",
-		"default_title": "Skip questions in one click",
+		"default_title": "Extension to skip and search questions on Chegg",
 		"default_popup": "popup.html"
 	},
 	"permissions": [
@@ -42,14 +42,5 @@
 			"run_at": "document_start"
 		}
 	],
-	"commands": {
-		"_execute_browser_action": {
-			"suggested_key": {
-				"default": "Ctrl+Shift+Z",
-				"mac": "MacCtrl+Shift+Z"
-			},
-			"description": "Opens popup.html"
-		}
-	},
 	"web_accessible_resources": ["countdown.mp3", "inject.js"]
 }
