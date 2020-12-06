@@ -35,6 +35,11 @@
 			],
 			"js": ["transcript_script.js"],
 			"run_at": "document_start"
+		},
+		{
+			"matches": ["https://www.chegg.com/search/*"],
+			"js": ["results_script.js"],
+			"run_at": "document_start"
 		}
 	],
 	"commands": {
